@@ -1,0 +1,34 @@
+# .dockerignore
+
+# Git files
+.git
+.gitignore
+
+# Docker files
+Dockerfile
+Dockerfile.dev
+docker-compose.yml
+
+# Rails logs and temp files
+log/*
+tmp/*
+storage/*
+
+# Node dependencies
+node_modules/
+
+# Local secrets
+config/master.key
+.env
+
+# Other
+.vscode/
+
+# Test files
+spec/
+test/
+coverage/
+
+# System files
+.DS_Store
+*.swp
