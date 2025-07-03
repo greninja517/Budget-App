@@ -1,4 +1,4 @@
-FROM ruby:3.1.2 AS builder
+FROM docker.io/library/ruby:3.1.2 AS builder
 
 RUN apt update -qq && apt install -y build-essential libpq-dev nodejs npm
 
@@ -15,7 +15,7 @@ COPY . .
 RUN SECRET_KEY_BASE="dummy_secret" bundle exec rails assets:precompile
 
 # stage 2
-FROM ruby:3.1.2-slim
+FROM docker.io/library/ruby:3.1.2-slim
 
 RUN apt update -qq && apt install -y --no-install-recommends libpq5 && \
     rm -rf /var/lib/apt/lists/*
